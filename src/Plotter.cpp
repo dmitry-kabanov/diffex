@@ -23,20 +23,16 @@ void Plotter::printHeader()
 
 void Plotter::printParameters()
 {
-	outputFile << "JMAX = " 
-		<< configReader->getSpatialCoordinatPointsQuantity() 
-		<< ", MAXEX = " << configReader->getExactSolutionMembersQuantity()
-		<< ", NMAX = " << configReader->getTimeStepsQuantity()
-		<< ", TMAX = " << configReader->getMaxTime()
-		<< ", TST = " << configReader->getInitialTime()
-		<< ", GAM = " << configReader->getGammaValue()
-		<< endl;
-	outputFile << "S = "
-		<< configReader->getSParameterValue()
-		<< ", ALPH = " << configReader->getDiffusionCoefficient()
-		<< ", DELT = " << " Fill me with values"
-		<< ", DELX = " << " Fill me with values"
-		<< endl;
+	outputFile << "JMAX" << delimiter << configReader->getSpatialCoordinatPointsQuantity() << endl;
+	outputFile << "MAXEX" << delimiter << configReader->getExactSolutionMembersQuantity() << endl;
+	outputFile << "NMAX" << delimiter << configReader->getTimeStepsQuantity() << endl;
+	outputFile << "TMAX" << delimiter << configReader->getMaxTime() << endl;
+	outputFile << "TST" << delimiter << configReader->getInitialTime() << endl;
+	outputFile << "GAM" << delimiter << configReader->getGammaValue() << endl;
+	outputFile << "S" << delimiter << configReader->getSParameterValue() << endl;
+	outputFile << "ALPH" << delimiter << configReader->getDiffusionCoefficient() << endl;
+	outputFile << "DELT" << delimiter << " Fill me with values" << endl;
+	outputFile << "DELX" << delimiter << " Fill me with values" << endl;
 }
 
 void Plotter::printData(const FTCSSchemeSolver &solver)
