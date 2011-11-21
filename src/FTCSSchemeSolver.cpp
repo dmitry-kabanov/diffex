@@ -136,6 +136,6 @@ void FTCSSchemeSolver::obtainRmsError()
 		sum += dmp * dmp;
 	}
 
-	double avs = sum / (1.0 + configReader->getSpatialCoordinatPointsQuantity());
+	double avs = sum / (configReader->getSpatialCoordinatPointsQuantity());
 	rmsError = sqrt(avs);
 }
