@@ -89,12 +89,12 @@ void FTCSSchemeSolver::run()
 		advance();
 		plotter->printData(*this);
 
-		time += deltaT;
-
 		if (time > configReader->getMaxTime())
 		{
 			break;
 		}
+
+		time += deltaT;
 	}
 
 	obtainRmsError();
