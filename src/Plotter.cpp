@@ -50,5 +50,5 @@ void Plotter::printData(const FTCSSchemeSolver &solver)
 
 void Plotter::printRmsError(const FTCSSchemeSolver &solver)
 {
-	outputFile << "RMS Error = " << solver.getRmsError() << endl;
+	outputFile << "RMS Error" << delimiter << solver.getRmsError() << endl;
 }
