@@ -21,7 +21,7 @@ void Plotter::printHeader()
 	}
 }
 
-void Plotter::printParameters()
+void Plotter::printParameters(const FTCSSchemeSolver &solver)
 {
 	outputFile << "JMAX" << delimiter << configReader->getSpatialCoordinatPointsQuantity() << endl;
 	outputFile << "MAXEX" << delimiter << configReader->getExactSolutionMembersQuantity() << endl;
@@ -31,8 +31,8 @@ void Plotter::printParameters()
 	outputFile << "GAM" << delimiter << configReader->getGammaValue() << endl;
 	outputFile << "S" << delimiter << configReader->getSParameterValue() << endl;
 	outputFile << "ALPH" << delimiter << configReader->getDiffusionCoefficient() << endl;
-	outputFile << "DELT" << delimiter << " Fill me with values" << endl;
-	outputFile << "DELX" << delimiter << " Fill me with values" << endl;
+	outputFile << "DELT" << delimiter << solver.getTimeStep() << endl;
+	outputFile << "DELX" << delimiter << solver.getSpatialStep() << endl;
 }
 
 void Plotter::printData(const FTCSSchemeSolver &solver)

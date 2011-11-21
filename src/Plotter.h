@@ -12,7 +12,7 @@ class Plotter
 public:
 	Plotter(const std::string &outputFileName, const ConfigReader *configReader);
 	void printHeader();
-	void printParameters();
+	void printParameters(const FTCSSchemeSolver &solver);
 	void printData(const FTCSSchemeSolver &solver);
 	void printRmsError(const FTCSSchemeSolver &solver);
 

@@ -12,6 +12,8 @@ public:
 	void obtainInitialConditionsFromExactSolution();
 	void calculateBoundaryConditions();
 	void run();
+	double getTimeStep() const { return deltaT; }
+	double getSpatialStep() const { return deltaX; }
 	double getRmsError() const { return rmsError; }
 	double getCurrentTime() const { return time; }
 	double *getSolution() const { return temperatureDimension; }

@@ -15,7 +15,7 @@ FTCSSchemeSolver::FTCSSchemeSolver(const ConfigReader *configReader)
 	string outputFileName("difex.out");
 	plotter = new Plotter(outputFileName, configReader);
 	plotter->printHeader();
-	plotter->printParameters();
+	plotter->printParameters(*this);
 
 	int maxSpatialStep = configReader->getSpatialCoordinatPointsQuantity();
 	temperatureCurrentLayer = new double[maxSpatialStep];
