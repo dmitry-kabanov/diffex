@@ -22,7 +22,7 @@ void ExactSolutionCalculator::calculate(double *temperatureExactSolution)
 		x[j] = deltaX * j;
 		temperatureExactSolution[j] = 100.0;
 
-		for (int k = 1; k < MAXEX; k++)
+		for (int k = 1; k <= MAXEX; k++)
 		{
 			numericalCoefficient = (2.0 * k - 1.0);
 			// TODO: обязательно добавить сюда нормировку по XMAX = 1.0,
@@ -34,6 +34,11 @@ void ExactSolutionCalculator::calculate(double *temperatureExactSolution)
 			if (exponentArgument < -25.0)
 			{
 				exponentArgument = -25.0;
+			}
+
+			if (exp(exponentArgument) < 1.0e-10)
+			{
+				break;
 			}
 
             temperatureExactSolution[j] -= 400.0 / numericalCoefficient / M_PI * sin(sinusArgument) * exp(exponentArgument);
