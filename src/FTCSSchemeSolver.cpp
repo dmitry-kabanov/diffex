@@ -50,6 +50,8 @@ void FTCSSchemeSolver::obtainInitialConditionsFromExactSolution()
 		);
 		calculator->calculate(temperatureExactSolution);
 
+		delete calculator;
+
 		for (int j = 1; j < configReader->getSpatialCoordinatPointsQuantity() - 1; j++)
 		{
 			if (i == 0)
@@ -145,6 +147,8 @@ void FTCSSchemeSolver::obtainRmsError()
 		time
 	);
 	calculator->calculate(temperatureExactSolution);
+
+	delete calculator;
 
 	for (int j = 0; j < configReader->getSpatialCoordinatPointsQuantity(); j++)
 	{
