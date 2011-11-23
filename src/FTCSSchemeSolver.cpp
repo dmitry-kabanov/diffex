@@ -27,10 +27,10 @@ FTCSSchemeSolver::FTCSSchemeSolver(const ConfigReader *configReader)
 FTCSSchemeSolver::~FTCSSchemeSolver()
 {
 	delete plotter;
-	delete [] temperatureCurrentLayer;
-	delete [] temperatureDimension;
-	delete [] temperatureExactSolution;
-	delete [] temperaturePreviousLayer;
+	delete[] temperatureCurrentLayer;
+	delete[] temperatureDimension;
+	delete[] temperatureExactSolution;
+	delete[] temperaturePreviousLayer;
 }
 
 void FTCSSchemeSolver::obtainInitialConditionsFromExactSolution()
