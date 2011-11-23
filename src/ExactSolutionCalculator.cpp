@@ -11,6 +11,12 @@ ExactSolutionCalculator::ExactSolutionCalculator(int JMAX, int MAXEX, double del
 	x = new double[JMAX];
 }
 
+ExactSolutionCalculator::~ExactSolutionCalculator()
+{
+	delete[] x;
+}
+
+
 void ExactSolutionCalculator::calculate(double *temperatureExactSolution)
 {
 	double numericalCoefficient;

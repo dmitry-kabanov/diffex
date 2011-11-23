@@ -5,6 +5,7 @@ class ExactSolutionCalculator
 {
 public:
 	ExactSolutionCalculator(int JMAX, int MAXEX, double deltaX, double alpha, double time);
+	~ExactSolutionCalculator();
 	void calculate(double *temperatureExactSolution);
 
 private:
