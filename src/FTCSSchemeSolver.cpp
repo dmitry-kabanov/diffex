@@ -107,8 +107,13 @@ void FTCSSchemeSolver::advance()
 
 	for (int j = 1; j < configReader->getSpatialCoordinatPointsQuantity() - 1; j++)
 	{
-		temperatureCurrentLayer[j] = (1.0 - 2.0 * s) * temperatureCurrentLayer[j] +
-			s * (temperatureCurrentLayer[j-1] + temperatureCurrentLayer[j+1]);
+		temperatureCurrentLayer[j] = (1.0 - 2.0 * s) * temperaturePreviousLayer[j] +
+			s * (temperaturePreviousLayer[j-1] + temperaturePreviousLayer[j+1]);
+	}
+
+	for (int j = 1; j < configReader->getSpatialCoordinatPointsQuantity() - 1; j++)
+	{
+		temperaturePreviousLayer[j] = temperatureCurrentLayer[j];
 	}
 
 	for (int j = 1; j < configReader->getSpatialCoordinatPointsQuantity() - 1; j++)
