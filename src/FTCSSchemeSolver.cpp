@@ -115,6 +115,17 @@ void FTCSSchemeSolver::advance()
 	{
 		temperatureDimension[j] = 100.0 * temperatureCurrentLayer[j];
 	}
+
+	ExactSolutionCalculator *calculator = new ExactSolutionCalculator(
+		configReader->getSpatialCoordinatPointsQuantity(),
+		configReader->getExactSolutionMembersQuantity(),
+		deltaX,
+		configReader->getDiffusionCoefficient(),
+		time
+		);
+	calculator->calculate(temperatureExactSolution);
+
+	delete calculator;
 }
 
 void FTCSSchemeSolver::obtainRmsError()

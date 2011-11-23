@@ -46,6 +46,16 @@ void Plotter::printData(const FTCSSchemeSolver &solver)
 	}
 
 	outputFile << endl;
+
+	outputFile << solver.getCurrentTime() << delimiter;
+	const double *exactSolution = solver.getExactSolution();
+
+	for (int i = 0; i < configReader->getSpatialCoordinatPointsQuantity(); i++)
+	{
+		outputFile << exactSolution[i] << delimiter;
+	}
+
+	outputFile << endl;
 }
 
 void Plotter::printRmsError(const FTCSSchemeSolver &solver)

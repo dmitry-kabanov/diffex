@@ -17,6 +17,7 @@ public:
 	double getRmsError() const { return rmsError; }
 	double getCurrentTime() const { return time; }
 	double *getSolution() const { return temperatureDimension; }
+	double *getExactSolution() const { return temperatureExactSolution; }
 
 private:
 	void advance();
